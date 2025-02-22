@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Up and Atom Club - Coming Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 The Up and Atom Club 🚀</h1>
+        <p>Igniting curiosity, sparking innovation! A STEM club for the next generation of thinkers and doers.</p>
+        <p>We're launching soon! Stay tuned for something exciting.</p>
+        <div class="countdown" id="countdown">Launching on: June 1, 2025</div>
+    </div>
+    <script>
+        function countdown() {
+            const launchDate = new Date("2025-06-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = launchDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerText = `Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("countdown").innerText = "We are live!";
+            }
+        }
+        setInterval(countdown, 1000);
+        countdown();
+    </script>
+</body>
+</html>
